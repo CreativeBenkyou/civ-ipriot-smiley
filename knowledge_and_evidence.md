@@ -18,7 +18,7 @@ This document includes instructions and knowledge questions that must be complet
 - When requested to upload evidence, upload all screenshots to `screenshots/` and embed them in this document. For example:
 
 ```markdown
-![Example Running Code](screenshots/screenshot1.png)
+![Example Running Code](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
 ```
 
 ![Sample](screenshots/sample.png)
@@ -263,7 +263,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > I mostly just copied the already working code from the smiley_object and transposed it onto a new object based off the Sad class to make a sad_smiley object.
+  > The already existing problem seems to be that the smileys are just blinking once and then staying wide_open.
+  > I would be better to make a loop so that it continues to blink as time passes.
 
   ### 2.8. If It Walks Like a Duck…
 
@@ -271,23 +273,26 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > As Blinkable imports "from abc import ABC, abstractmethod", and uses ABC as a parameter, that would imply that it is an abstract class.
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > An abstract parent class.
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Polymorphism is one of the four pillars of object-oriented programming, this is the pillar that represents the relationship between the Blinkable class and the child class that can be made out of the blank class Blinkable.
+  > Although you can mention inheritance when thinking about Blinkable, the polymorphic aspect of a child class is more prominent as you will need to implement Blinkable in addition to Smiley for any child classes, otherwise there will be no functionality in a new class object (smiley, sad_smiley, etc.)
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > You could easily just use a newly defined blink() method in the Sad class without inheriting it from Blinkable, but when you have the inheritance from Blinkable, it makes Sad better encapsulated.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > The capability is called Duck Typing. You can make a variable or attribute without stating the type, it is inferred, and then it can change to a certain type in Python at any point during a program, when asked to.
+  > Where in statically typed programs like Java each variable must state what the type is when made.
+  > So while in Python you can make the class system work like it does in this project, if you had a blink() function in Sad without inheriting Blinkable, then it is named a Blinkable class anyway if it isn't actually a real child class of Blinkable.
 
   ***
 
@@ -300,19 +305,19 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > The colours I have noted that have been used are yellow and black from smiley.py, there is also a few more colours in sense_hat.py, red, green and blue, but they aren't used. There are some more colours in smiley.py called WHITE, GREEN, RED, YELLOW and BLANK (which comes out as black). 
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > In smiley.py those colours are stored as global variables and are capitalised. For each defined colour the RGB codes are stored in a tuple, so that means the programmer wanted the values to remain the same, without change.
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > Smiley and Smiley's child classes; Happy and Sad, all use the colours. SenseHat is using colours, but they aren't stored in a variable.
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > A really simple, but illogical way, to change the smileys to green would be to change the values stored in the YELLOW global variable to (0, 255, 0).
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 

@@ -69,6 +69,7 @@ class SenseHat:
 
     def _set_pixels(self, rgb_values):
         self.logger.debug('Setting mock SenseHAT LED matrix pixel values')
+        # ERROR
         self.logger.debug(f'{self.low_light=}')
         if self.low_light:
             dimming_factor = 0.6  # Adjust this value between 0 and 1 for different dimming levels
@@ -76,6 +77,7 @@ class SenseHat:
                            int(b * dimming_factor)) for r, g, b in rgb_values]
 
         self.rgb_values = rgb_values
+        # ERROR
         self.logger.debug(f'{self.rgb_values=}')
         for i, rgb in enumerate(rgb_values):
             self.led_matrix[i].config(bg='#%02x%02x%02x' % rgb)  # type: ignore
