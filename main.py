@@ -6,6 +6,7 @@ import time
 
 from happy import Happy
 from sad import Sad
+from angry import Angry
 
 def main():
     # Here the program runs the object smiley made from the Happy class
@@ -19,6 +20,15 @@ def main():
 
     # Here the program runs the object sad_smiley made from the Sad class
     sad_smiley = Sad()
+
+    sad_smiley.show()
+
+    time.sleep(1)
+
+    sad_smiley.blink()
+
+    # Here the program runs the object angry_smiley made from the Angry class
+    sad_smiley = Angry()
 
     sad_smiley.show()
 
